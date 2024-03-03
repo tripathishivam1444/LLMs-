@@ -1,6 +1,6 @@
-pip install -r .\requirenments.txt
+
 import streamlit as st
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
 from utils import *
 from streamlit_chat import message
 
