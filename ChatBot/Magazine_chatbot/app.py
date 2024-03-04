@@ -1,7 +1,7 @@
 
 import streamlit as st
-import accelerate
-from langchain.embeddings.huggingface import HuggingFaceEmbeddings
+#import accelerate
+#from langchain.embeddings.huggingface import HuggingFaceEmbeddings
 from transformers import AutoTokenizer, FalconForCausalLM, AutoModelForCausalLM
 import transformers
 import torch
