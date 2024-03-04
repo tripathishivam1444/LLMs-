@@ -1,7 +1,7 @@
 pypdf
 transformers
-einops
-accelerate
+#einops
+#accelerate
 langchain
 #bitsandbytes
 sentence_transformers
