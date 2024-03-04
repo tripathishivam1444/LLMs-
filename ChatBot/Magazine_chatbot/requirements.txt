@@ -3,5 +3,5 @@ transformers
 einops
 accelerate
 langchain
-bitsandbytes
+#bitsandbytes
 sentence_transformers
