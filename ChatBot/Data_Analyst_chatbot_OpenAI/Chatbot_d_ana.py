@@ -17,6 +17,11 @@ if 'Chatbot_Responce' not in st.session_state:
 # Capture the CSV file
 data = st.file_uploader("Upload your CSV file", type="csv")
 
+# inserting Loittes
+st.markdown("<iframe src='https://lottie.host/embed/61073385-a44c-4813-bee2-7bb0bdc62c25/7epTOycPHw.json' width='600' height='400' scrolling='no'></iframe>", unsafe_allow_html=True)
+
+
+
 # query = st.chat_input("Enter Your Query ")
 # button = st.button("Generate Response ")
 
