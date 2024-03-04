@@ -1,22 +1,29 @@
 
 import streamlit as st
-#import accelerate
-#from langchain.embeddings.huggingface import HuggingFaceEmbeddings
-from transformers import AutoTokenizer, FalconForCausalLM, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM
 import transformers
 import torch
 
-# from llama_index import LangchainEmbedding, ServiceContext
-# from llama_index import SimpleInputPrompt
-# from llama_index import VectorStoreIndex, SimpleDirectoryReader, ServiceContext
-# from llama_index.llms import HuggingFaceLLM
-# from llama_index import GPTVectorStoreIndex, SimpleDirectoryReader, ServiceContext # LLMPredictor, PromptHelper,
-# from langchain.llms.openai import OpenAI
-
-
-
 model = "tiiuae/falcon-7b-instruct"
 
-falcon_tokenizer = AutoModelForCausalLM.from_pretrained(model, device_map="auto", load_in_4bit=True)  #,  use_auth_token=auth_token
-falcon_tokenizer = AutoTokenizer.from_pretrained(model)
+tokenizer = AutoTokenizer.from_pretrained(model)
+pipeline = transformers.pipeline(
+    "text-generation",
+    model=model,
+    tokenizer=tokenizer,
+    torch_dtype=torch.bfloat16,
+    trust_remote_code=True,
+    device_map="auto",
+)
+sequences = pipeline(
+   "Girafatron is obsessed with giraffes, the most glorious animal on the face of this Earth. Giraftron believes all other animals are irrelevant when compared to the glorious majesty of the giraffe.\nDaniel: Hello, Girafatron!\nGirafatron:",
+    max_length=200,
+    do_sample=True,
+    top_k=10,
+    num_return_sequences=1,
+    eos_token_id=tokenizer.eos_token_id,
+)
+for seq in sequences:
+    print(f"Result: {seq['generated_text']}")
+
 st.title("Evrything setup done 9GB model Downloaded")
