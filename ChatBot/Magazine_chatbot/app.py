@@ -19,4 +19,4 @@ model = "tiiuae/falcon-7b-instruct"
 
 falcon_tokenizer = AutoModelForCausalLM.from_pretrained(model, device_map="auto", load_in_4bit=True)  #,  use_auth_token=auth_token
 falcon_tokenizer = AutoTokenizer.from_pretrained(model)
-st.title("Evrything setup done 9GB model Downloaded)
+st.title("Evrything setup done 9GB model Downloaded")
