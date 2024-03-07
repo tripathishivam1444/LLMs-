@@ -3,6 +3,12 @@ from  streamlit_chat import message
 from utils import *
 import re
 
+from dotenv import load_dotenv
+
+import os 
+
+load_dotenv()
+os.environ['OPENAI_API_KEY'] = os.getenv('OPENAI_API_KEY')
 
 
 if "user_input" not in st.session_state:
