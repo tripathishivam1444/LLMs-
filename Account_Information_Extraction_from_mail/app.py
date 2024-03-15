@@ -8,9 +8,9 @@ def main():
     
     load_dotenv()
     
-    st.set_page_config(page_title="Invoice Extraction Bot")
-    st.sidebar.text("Powered by Eshan K 😎")
-    st.title("Eshan Data Extraction Bot 🤖")
+    st.set_page_config(page_title="Email Information Extraction Bot")
+    st.sidebar.text("Powered by U TRIPATHI 😎")
+    st.title("Email Information Extraction Bot 🤖")
     
     all_user_text = st.text_area("Insert Your text" )
 
